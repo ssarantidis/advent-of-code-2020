@@ -26,10 +26,10 @@ func readAndProcess(file string, rightHop int, downHop int) []string {
 		panic(err)
 	}
 
-	lines := strings.Split(string(rawBytes), "\n")
+	lines := strings.Split(string(rawBytes), "\r\n")
 
 	for i := downHop; i < len(lines); i += downHop {
-		lineLength := len(strings.TrimRight(lines[i], "\r\n"))
+		lineLength := len(lines[i])
 		fmt.Println("Index #", i)
 		fmt.Println("Processing:", lines[i])
 		if (currentPosition + rightHop) <= (lineLength - 1) {

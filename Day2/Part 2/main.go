@@ -65,7 +65,7 @@ func isPasswordValid(s string) bool {
 	fmt.Println("The firstOccurrence  is:[", firstOccurrence, "]")
 	fmt.Println("The secondOccurrence  is:[", secondOccurrence, "]")
 
-	if (passwordCharList[firstOccurrence-1] == policyLetter || passwordCharList[secondOccurrence-1] == policyLetter) && !(passwordCharList[firstOccurrence-1] == policyLetter && passwordCharList[secondOccurrence-1] == policyLetter) {
+	if (passwordCharList[firstOccurrence-1] == policyLetter) != (passwordCharList[secondOccurrence-1] == policyLetter) {
 		fmt.Println("The password [", password, "] is valid!")
 		return true
 	}
